@@ -378,3 +378,121 @@ const loadPortfolioContent = (serviceId) => {
 
 // Llamar a la función para cargar el contenido
 loadPortfolioContent(serviceId);
+
+
+const categories = {
+  1: {
+    name: "Jardinería",
+    tags: [
+      "Corte de Césped",
+      "Diseño de Jardines",
+      "Mantenimiento de Jardines",
+      "Plantas",
+      "Decoración Exterior"
+    ]
+  },
+  2: {
+    name: "Limpieza",
+    tags: [
+      "Limpieza de Casas",
+      "Limpieza Comercial",
+      "Limpieza Profunda",
+      "Desinfección",
+      "Organización"
+    ]
+  },
+  3: {
+    name: "Mecánica",
+    tags: [
+      "Reparación de Vehículos",
+      "Mantenimiento",
+      "Diagnóstico",
+      "Tuning",
+      "Accesorios"
+    ]
+  },
+  4: {
+    name: "Plomería",
+    tags: [
+      "Instalación de Tuberías",
+      "Reparación de Grifos",
+      "Desagües",
+      "Calentadores",
+      "Mantenimiento"
+    ]
+  }
+};
+
+// Cargar contenido de categorías y etiquetas según el ID del servicio
+const loadCategoriesAndTags = (serviceId) => {
+  const category = categories[serviceId];
+
+  if (category) {
+    const categoriesList = document.getElementById('categories-list');
+    const tagsList = document.getElementById('tags-list');
+
+    // Limpiar listas previas
+    categoriesList.innerHTML = '';
+    tagsList.innerHTML = '';
+
+    // Cargar categoría
+    const categoryLink = document.createElement('a');
+    categoryLink.href = `#${category.name.toLowerCase()}`;
+    categoryLink.classList.add('category');
+    categoryLink.textContent = category.name;
+    categoriesList.appendChild(categoryLink);
+
+    // Cargar etiquetas
+    category.tags.forEach((tag) => {
+      const tagLink = document.createElement('a');
+      tagLink.href = `#${tag.toLowerCase()}`;
+      tagLink.classList.add('tag');
+      tagLink.textContent = tag;
+      tagsList.appendChild(tagLink);
+    });
+  } else {
+    console.error('Categoría no encontrada');
+  }
+};
+
+// Llamar a la función para cargar categorías y etiquetas
+loadCategoriesAndTags(serviceId);
+
+// Biografías según el ID del servicio
+const bios = {
+  1: `Soy Luis Torres, un apasionado jardinero con un gran amor por transformar espacios exteriores en hermosos paisajes. Con años de experiencia, me especializo en crear jardines sostenibles que no solo mejoran la estética, sino que también apoyan los ecosistemas locales.`,
+  2: `Soy Ana Martínez, una experta en limpieza dedicada a mantener los espacios impecables. Con un gran ojo para los detalles, me especializo en limpiezas profundas y en el mantenimiento de entornos saludables y organizados.`,
+  3: `Soy Ana Martínez, una mecánica calificada apasionada por mantener los vehículos en óptimas condiciones. Mi experiencia abarca el diagnóstico y la reparación de problemas automotrices, garantizando seguridad y rendimiento en la carretera.`,
+  4: `Soy Luis Torres, un fontanero profesional enfocado en ofrecer soluciones de fontanería eficientes y confiables. Me especializo en todo, desde reparaciones simples hasta instalaciones complejas, asegurando que tu sistema de fontanería funcione a la perfección.`
+};
+
+// Función para cargar la biografía según el ID del servicio
+const loadBiography = (serviceId) => {
+  const bioContainer = document.getElementById('profile-bio'); // Seleccionamos el contenedor de la biografía
+
+  if (bios[serviceId]) {
+    // Si existe la biografía para ese serviceId, la cargamos
+    bioContainer.innerHTML = `<p>${bios[serviceId]}</p>`;
+  } else {
+    console.error('Biografía no encontrada para el servicio ID: ' + serviceId);
+  }
+};
+
+// Llamar a la función para cargar la biografía (así como haces con las categorías)
+loadBiography(serviceId);
+
+
+// Manejar el submit del formulario
+const serviceForm = document.getElementById('service-form');
+
+serviceForm.addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+  // Aquí puedes hacer alguna validación adicional si es necesario
+
+  // Redirigir a otra página después de la confirmación
+  window.location.href = 'pagos.php'; // Cambia 'pagina-confirmacion.html' por la URL que desees
+});
+
+
+

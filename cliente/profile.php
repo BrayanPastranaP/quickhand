@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="stylesProfileService.css" />
   </head>
   <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <ul class="navbar-menu">
+        <li class="navbar-item"><a href="/quickhand/index.php">Home</a></li>
+      </ul>
+    </nav>
     <div class="container">
         <div class="profile-card">
             <img

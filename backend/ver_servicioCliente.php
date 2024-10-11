@@ -18,7 +18,8 @@ SELECT
     p.nombre AS proveedor_nombre,
     p.ubicacion_trabajo,
     p.areas_expertise,
-    p.idiomas
+    p.idiomas,
+    p.descripcion AS descripcion_proveedor
 FROM 
     Servicios s
 LEFT JOIN 
@@ -86,6 +87,3 @@ $stmt_service->close();
 $stmt_reviews->close();
 $conn->close();
 ?>
-
-
-

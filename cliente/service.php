@@ -163,7 +163,7 @@ if ($serviceId) {
 
       <div class="package">
   <h3>Request service</h3>
-  <p>MASCOT CHARACTER ONLY</p>
+  <p><?php echo htmlspecialchars($service['descripcion']); ?></p>
 
   <div class="price">$120</div>
   <a class="button" id="request-service-button" href="#">Continue</a>
@@ -189,28 +189,26 @@ if ($serviceId) {
 </div>
 
 
+<div id="popup" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+  <div style="background:white; padding:20px; border-radius:10px; width:300px; text-align:center;">
+    <h3>Procesar Pago</h3>
+    <!-- Aquí se insertará el botón de PayPal -->
+    <div id="paypal-button-container"></div>
+    <button id="close-popup">Cerrar</button>
+  </div>
+</div>
+
       <!-- Aqui se colocan las categorias -->
 
-      <div class="categories-container">
-        <h2>Categories</h2>
-        <a href="#branding" class="category">Carros</a>
-        <a href="#design" class="category">Autos</a>
-        <a href="#illustration" class="category">Fallas</a>
-        <a href="#marketing" class="category">Vehiculos</a>
-        <a href="#web-development" class="category">Llantas</a>
-      </div>
+      <div class="categories-container" id="categories-container">
+  <h2>Categories</h2>
+  <div id="categories-list"></div>
+</div>
 
-
-      <!-- Aqui se colocan los tags-->
-      
-      <div class="tags-container">
-        <h2>Tags</h2>
-        <a href="#logo" class="tag">carro</a>
-        <a href="#mascot" class="tag">llantas</a>
-        <a href="#modern" class="tag">frenos</a>
-        <a href="#business-logo" class="tag">volante</a>
-        <a href="#logo-maker" class="tag">pintura</a>
-      </div>
+<div class="tags-container" id="tags-container">
+  <h2>Tags</h2>
+  <div id="tags-list"></div>
+</div>
 
 
       <!-- Aqui se desplegara informacion del proveedor-->
@@ -224,7 +222,7 @@ if ($serviceId) {
         />
         <div class="profile-info">
           <h1><?php echo htmlspecialchars($service['proveedor_nombre']); ?></h1>
-          <p>Especialista</p>
+          <p><?php echo htmlspecialchars($service['descripcion_proveedor']); ?></p>
           <div class="rating">
             <i class="fas fa-star"> </i>
             <span class="rating-value"> 4.9 (1,459) </span>
@@ -236,40 +234,31 @@ if ($serviceId) {
         <p class="expert-in">Expert in:</p>
         <p>
           <i class="fas fa-check-circle"> </i>
-          Especialista
+          <?php echo htmlspecialchars($service['areas_expertise']); ?>
         </p>
       </div>
       <div class="profile-stats">
         <div>
           <p>From</p>
-          <p>Philippines</p>
+          <p><?php echo htmlspecialchars($service['ubicacion_trabajo']); ?></p>
         </div>
         <div>
           <p>Member since</p>
-          <p>Mar 2014</p>
+          <p>Sep 2024</p>
         </div>
         <div>
           <p>Avg. response time</p>
           <p>2 hours</p>
         </div>
         <div>
-          <p>Last delivery</p>
-          <p>about 2 hours</p>
-        </div>
-        <div>
           <p>Languages</p>
-          <p>English</p>
+          <p>Español</p>
         </div>
       </div>
-      <div class="profile-bio">
-        <p>
-          I'm Michael "Miko" Abellera commonly known as Meokowdesigns, a
-          passionate mascot logo designer with a talent for translating brand
-          identities into captivating characters. I specialize in creating
-          unique and engaging mascots that perfectly capture a brand's
-          personality and connect with their target audience.
-        </p>
-      </div>
+      <h2>Biografía</h2>
+  <div class="profile-bio" id="profile-bio">
+    <!-- Aquí se cargará la biografía -->
+  </div>
 
 
 
@@ -326,7 +315,7 @@ if ($serviceId) {
       // Añade un marcador en la posición inicial
       L.marker([24.0223, -104.6700])
         .addTo(map)
-        .bindPopup("Ubicación en tema oscuro.")
+        .bindPopup("Donde puedes encontrarme")
         .openPopup();
     </script>
 
