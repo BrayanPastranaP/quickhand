@@ -8,9 +8,25 @@
     <link rel="stylesheet" href="styles.css" />
     <script src=" https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js "></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-ABW9SJu54RvwoP3Fh25ZNsxLzJ5qc5AW6QAxL8eL+jg/b2C1MP0E1h1hs4e0I0e3mvz7eL5Z3dU3TP4vPeMxB3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </head>
 
 <body>
+  <nav class="navbar">
+    <ul class="navbar-menu">
+        <li class="navbar-item">
+            <a href="/quickhand/index.php" class="home-button">
+                <i class="fas fa-home"></i> <!-- Ícono de casa -->
+            </a>
+        </li>
+    </ul>
+</nav>
+
     <header>
         <h1>Dashboard del Proveedor</h1>
         <p>Bienvenido, Luis Torres</p>

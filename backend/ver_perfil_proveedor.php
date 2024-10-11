@@ -34,12 +34,11 @@ if ($result->num_rows > 0) {
     echo '<form action="actualizar_perfil.php" method="POST" enctype="multipart/form-data">';
     
     // Mostrar la imagen del proveedor si existe
-    if (!empty($row["imagen_perfil"])) {
         echo '<label for="provider-image">Imagen del Proveedor:</label>';
         echo '<div class="image-preview">';
-        echo '<img src="' . htmlspecialchars($row["imagen_perfil"]) . '" alt="Imagen del Proveedor" id="provider-image" class="profile-image">';
+        echo '<img src="../img/electricidad.jpg" id="provider-image" class="profile-image" style="  object-fit: cover; width: 230px; height: 230px;">';
         echo '</div>';
-    }
+    
     
     echo '<label for="new-image">Subir nueva imagen:</label>';
     echo '<input type="file" id="new-image" name="new-image" accept="image/*">';

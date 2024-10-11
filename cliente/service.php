@@ -4,10 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Service</title>
-    <link
+
+ <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-ABW9SJu54RvwoP3Fh25ZNsxLzJ5qc5AW6QAxL8eL+jg/b2C1MP0E1h1hs4e0I0e3mvz7eL5Z3dU3TP4vPeMxB3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap"
       rel="stylesheet"
@@ -21,6 +24,16 @@
     <link rel="stylesheet" href="stylesProfileService.css">
   </head>
   <body>
+
+  <nav class="navbar">
+    <ul class="navbar-menu">
+        <li class="navbar-item">
+            <a href="/quickhand/index.php" class="home-button">
+                <i class="fas fa-home"></i> <!-- Ícono de casa -->
+            </a>
+        </li>
+    </ul>
+</nav>
 
 
 
@@ -44,9 +57,7 @@ if ($serviceId) {
         <h1><?php echo htmlspecialchars($service['descripcion']); ?></h1>
       </div>
       <!-- Breve descripcion del servicio-->
-      <div class="service-offer">
-        <p><?php echo htmlspecialchars($service['descripcion']); ?></p>
-      </div>
+
 
       <!-- Galería de imágenes -->
 <div class="gallery"></div>
@@ -87,7 +98,7 @@ if ($serviceId) {
                         width="50"
                     />
                     <div>
-                        <p>Reviewed by <?php echo htmlspecialchars($review['cliente_nombre']); ?> <?php echo htmlspecialchars($review['fecha']); ?></p>
+                        <p>Valorado por <?php echo htmlspecialchars($review['cliente_nombre']); ?> <?php echo htmlspecialchars($review['fecha']); ?></p>
                         <div class="rating">
                             <?php 
                             // Asumiendo que la calificación es un número del 1 al 5
@@ -154,7 +165,7 @@ if ($serviceId) {
       <!-- Si el provvedor del servicio indico una ubicacasion esta se vera en esta seccion-->
 
       <div>
-        <h2>Location</h2>
+        <h2>Ubicación</h2>
       </div>
       <div id="map" style="height: 400px; width: 100%"></div>
 
@@ -162,11 +173,11 @@ if ($serviceId) {
       <!-- Aqui nuevamente se despliega el ombre del servicio y su precio -->
 
       <div class="package">
-  <h3>Request service</h3>
+  <h3>Solicitar servicio</h3>
   <p><?php echo htmlspecialchars($service['descripcion']); ?></p>
 
   <div class="price">$120</div>
-  <a class="button" id="request-service-button" href="#">Continue</a>
+  <a class="button" id="request-service-button" href="#">Solicitar</a>
 </div>
 
 <!-- Modal para confirmar servicio -->
@@ -201,12 +212,12 @@ if ($serviceId) {
       <!-- Aqui se colocan las categorias -->
 
       <div class="categories-container" id="categories-container">
-  <h2>Categories</h2>
+  <h2>Categorías</h2>
   <div id="categories-list"></div>
 </div>
 
 <div class="tags-container" id="tags-container">
-  <h2>Tags</h2>
+  <h2>Etiquetas</h2>
   <div id="tags-list"></div>
 </div>
 
@@ -226,12 +237,12 @@ if ($serviceId) {
           <div class="rating">
             <i class="fas fa-star"> </i>
             <span class="rating-value"> 4.9 (1,459) </span>
-            <span class="top-rated"> Top Rated ★★★ </span>
+            <span class="top-rated">Mejor valorado ★★★ </span>
           </div>
         </div>
       </div>
       <div class="profile-details">
-        <p class="expert-in">Expert in:</p>
+        <p class="expert-in">Experto en:</p>
         <p>
           <i class="fas fa-check-circle"> </i>
           <?php echo htmlspecialchars($service['areas_expertise']); ?>
@@ -239,19 +250,19 @@ if ($serviceId) {
       </div>
       <div class="profile-stats">
         <div>
-          <p>From</p>
+          <p>Origen</p>
           <p><?php echo htmlspecialchars($service['ubicacion_trabajo']); ?></p>
         </div>
         <div>
-          <p>Member since</p>
+          <p>Miembro desde</p>
           <p>Sep 2024</p>
         </div>
         <div>
-          <p>Avg. response time</p>
-          <p>2 hours</p>
+          <p>Tiempo de respuesta promedio</p>
+          <p>2 horas</p>
         </div>
         <div>
-          <p>Languages</p>
+          <p>Idiomas</p>
           <p>Español</p>
         </div>
       </div>
@@ -265,7 +276,7 @@ if ($serviceId) {
       <!-- Aqui se desplagaran los posibles otros servicios que tenga el proveedor-->
       
       <div class="portfolio">
-  <h2>Other Services</h2>
+  <h2>Otros servicios</h2>
   <div class="portfolio-item" id="portfolio-item">
     <img
       id="main-image"
@@ -284,7 +295,7 @@ if ($serviceId) {
 </div>
 
       <div class="contact">
-        <a class="button" href="#"> Contact me </a>
+        <a class="button" href="#"> Contáctame </a>
       </div>
     </div>
 
