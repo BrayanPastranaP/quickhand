@@ -5,16 +5,23 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-ABW9SJu54RvwoP3Fh25ZNsxLzJ5qc5AW6QAxL8eL+jg/b2C1MP0E1h1hs4e0I0e3mvz7eL5Z3dU3TP4vPeMxB3w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <link rel="stylesheet" href="stylesProfileService.css" />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar">
-      <ul class="navbar-menu">
-        <li class="navbar-item"><a href="/quickhand/index.php">Home</a></li>
-      </ul>
-    </nav>
+    <!-- Navbar -->
+<nav class="navbar">
+    <ul class="navbar-menu">
+        <li class="navbar-item">
+            <a href="/quickhand/index.php" class="home-button">
+                <i class="fas fa-home"></i> <!-- Ícono de casa -->
+            </a>
+        </li>
+    </ul>
+</nav>
     <div class="container">
         <div class="profile-card">
             <img
