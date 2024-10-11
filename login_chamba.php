@@ -12,8 +12,10 @@
             <div class="login-content">
                 <h2 class="texto">Iniciar Sesión</h2>
                 <form class="login-form">
-                    <input type="text" placeholder="Correo Electrónico" required>
-                    <input type="password" placeholder="Contraseña" required>
+                <input type="text" placeholder="Correo Electrónico" required value="luist98@gmail.com">
+                <input type="password" placeholder="Contraseña" required value="contraseña123">
+
+    
                     <a href="proveedor/index.php" type="submit">INGRESAR</a>
                 </form>
                 <p class="texto">¿No tienes cuenta? <a href="registro_chamba.php">Registrarse</a></p>

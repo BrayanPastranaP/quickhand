@@ -211,7 +211,7 @@
       <div class="service-item">
         <img src="img/carpinteria.avif" alt="Service 1" />
         <div class="info_servicio">
-          <h3>Carpitería</h3>
+          <h3>Carpintería</h3>
           <div>
             <i class="uil uil-star"></i>
             <i class="uil uil-star"></i>
